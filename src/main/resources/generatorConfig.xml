@@ -1,0 +1,55 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!--context 生成上下文 配置生成规则
+            id 随意写
+           targetRuntime 生成策略
+                MyBatis3Simple 只生成简单的CRUD
+    -->
+    <context id="simple" targetRuntime="MyBatis3Simple">
+        <!--解决maven-mybatis-generator生成xml文件内容重复问题-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <commentGenerator>
+            <!--设置是否生成注释  true 不生成  注意： 如果不生成注释，下次生成代码就不会进行合并-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据源 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/study?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai"
+                        userId="root"
+                        password="root123456"/>
+
+        <!--pojo
+        javaModelGenerator  java实体生成规则(POJO)
+            targetPackage 生成到哪个包下
+            targetProject 生成到当前文件的哪个相对路径下
+        -->
+        <javaModelGenerator targetPackage="com.fyfe.entity" targetProject="src/main/java"/>
+        <!--mapper xml映射文件
+            sqlMapGenerator mapper xml映射文件生成规则
+            targetPackage 生成到哪个包下
+            targetProject 生成到当前文件的哪个相对路径下
+        -->
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"></sqlMapGenerator>
+        <!--mapper接口
+            javaClientGenerator mapper mapper接口生成规则
+            type 指定生成的方式
+                1.使用注解的方式生成
+                2.使用接口绑定的方式生成（要配置sqlMapGenerator）
+            targetPackage 生成到哪个包下
+            targetProject 生成到当前文件的哪个相对路径下-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.fyfe.mapper" targetProject="src/main/java"/>
+
+
+        <!--配置哪些表需要进行代码生成
+        tableName 表名
+        domainObjectName pojo类名
+        mapperName 对应mapper接口的类名 和 mapper xml文件名
+        -->
+
+        <table tableName="dept" domainObjectName="DeptDO" mapperName="DeptMapper" />
+        <table tableName="emp" domainObjectName="EmpDO" mapperName="EmpMapper" />
+    </context>
+</generatorConfiguration>
