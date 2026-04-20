@@ -26,7 +26,7 @@
             targetPackage 生成到哪个包下
             targetProject 生成到当前文件的哪个相对路径下
         -->
-        <javaModelGenerator targetPackage="com.fyfe.entity" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.fyfe.pojo" targetProject="src/main/java"/>
         <!--mapper xml映射文件
             sqlMapGenerator mapper xml映射文件生成规则
             targetPackage 生成到哪个包下
@@ -49,7 +49,7 @@
         mapperName 对应mapper接口的类名 和 mapper xml文件名
         -->
 
-        <table tableName="dept" domainObjectName="DeptDO" mapperName="DeptMapper" />
-        <table tableName="emp" domainObjectName="EmpDO" mapperName="EmpMapper" />
+        <table tableName="dept" domainObjectName="Dept" mapperName="DeptMapper" />
+        <table tableName="emp" domainObjectName="Emp" mapperName="EmpMapper" />
     </context>
 </generatorConfiguration>

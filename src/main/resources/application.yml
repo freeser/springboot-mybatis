@@ -1,0 +1,19 @@
+#配置数据库连接信息
+spring:
+  datasource:
+    username: root
+    password: root123456
+    url: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  # type-aliases-package 可有可无 批量设置别名作用：就是在mapper.xml文件中直接写类名，不配置就需要写类的全路径名
+  type-aliases-package: com.fyfe.pojo
+  # 必须 指定Mapper.xml文件位置
+  mapper-locations: classpath:mappers/*Mapper.xml
+
+# 如果要看日志 将mapper接口所在包的日志级别改成debug，可以在控制台打印sql
+logging:
+  level:
+    com.cctv.mapper: debug
