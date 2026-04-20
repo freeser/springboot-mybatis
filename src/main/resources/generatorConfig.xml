@@ -51,5 +51,6 @@
 
         <table tableName="dept" domainObjectName="Dept" mapperName="DeptMapper" />
         <table tableName="emp" domainObjectName="Emp" mapperName="EmpMapper" />
+        <table tableName="user" domainObjectName="User" mapperName="UserMapper" />
     </context>
 </generatorConfiguration>

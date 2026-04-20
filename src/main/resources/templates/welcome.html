@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<#if session_user??>
+欢迎你：${session_user.username}
+<#else>
+欢迎你：游客
+</#if>
+
+<br>
+注册或登录后才能看到的界面
+
+<a href="/user/outUser">退出登录</a>
+</body>
+</html>

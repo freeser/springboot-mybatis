@@ -1,5 +1,9 @@
 #配置数据库连接信息
 spring:
+  freemarker:
+    cache: false
+    charset: utf-8
+    suffix: .html
   datasource:
     druid:
       username: root
