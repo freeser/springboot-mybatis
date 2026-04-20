@@ -32,9 +32,7 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public int insert(Emp emp) {
-        int i = empMapper.insert(emp);
-        int a = 1/0;
-        return i;
+        return empMapper.insert(emp);
     }
 
 }

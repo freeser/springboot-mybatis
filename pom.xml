@@ -44,6 +44,13 @@
             <version>3.0.5</version>
         </dependency>
 
+        <!-- Source: https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-3-starter</artifactId>
+            <version>1.2.27</version>
+        </dependency>
+
         <!-- mysql驱动 -->
         <!-- Source: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
         <dependency>
